@@ -1,36 +1,405 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luis Guillermo Pinilla Rodríguez — Ingeniería, energía, sostenibilidad y transición energética.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Luis Guillermo Pinilla Rodríguez — Engineering, energy, sustainability, climate change and energy transition." />
   <title>Luis Guillermo Pinilla Rodríguez</title>
+
   <style>
-    :root{--bg:#081822;--panel:#102733;--text:#f4f7f8;--muted:#b8c4ca;--accent:#9fbe45;--line:rgba(255,255,255,.12);--max:1120px}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top right,rgba(159,190,69,.11),transparent 30%),var(--bg);color:var(--text);line-height:1.6}
-    a{color:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
-    header{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(8,24,34,.86);border-bottom:1px solid var(--line)}
-    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:700;text-decoration:none}.nav-links{display:flex;gap:18px}.nav-links a{color:var(--muted);text-decoration:none;font-size:.95rem}.nav-links a:hover{color:var(--text)}
-    .hero{min-height:78vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:60px;padding:78px 0 62px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:.82rem;font-weight:700}
-    h1{font-size:clamp(2.7rem,7vw,5.6rem);line-height:.98;letter-spacing:-3px;margin:14px 0 24px;max-width:760px}.lead{max-width:690px;color:var(--muted);font-size:clamp(1.05rem,2vw,1.28rem)}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.button{display:inline-block;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--line)}.button.primary{color:#15200a;background:var(--accent);border-color:var(--accent)}
-    .portrait{position:relative;max-width:470px;margin-left:auto}.portrait:before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--accent);border-radius:30px;z-index:-1}.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:30px;filter:saturate(.88) contrast(1.03)}
-    section{padding:74px 0;border-top:1px solid var(--line)}h2{margin:0 0 20px;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-1.4px}.section-intro{max-width:760px;color:var(--muted);margin-bottom:34px}.statement{font-size:clamp(1.5rem,3vw,2.45rem);line-height:1.25;max-width:900px;margin:0}.statement strong{color:var(--accent)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(16,39,51,.76);border:1px solid var(--line);border-radius:20px;padding:24px}.card h3{margin-top:0;margin-bottom:10px}.card p{margin-bottom:0;color:var(--muted)}
-    .questions{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:34px}.question{padding:18px 0;border-bottom:1px solid var(--line);font-size:1.08rem}.contact{background:var(--accent);color:#15200a;border-radius:28px;padding:42px}.contact p{max-width:720px;font-size:1.12rem}.contact a{font-weight:700;word-break:break-word}footer{padding:32px 0 48px;color:var(--muted);font-size:.92rem}
-    @media(max-width:820px){nav{padding:18px 0}.nav-links{display:none}.hero{grid-template-columns:1fr;gap:42px;padding-top:52px}.portrait{margin:0;max-width:100%}.grid,.questions{grid-template-columns:1fr}h1{letter-spacing:-2px}.contact{padding:28px}}
+    :root {
+      --bg: #081822;
+      --panel: #102733;
+      --text: #f4f7f8;
+      --muted: #b8c4ca;
+      --accent: #9fbe45;
+      --line: rgba(255,255,255,.12);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(159,190,69,.11), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(8,24,34,.86);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: .2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+      padding: 78px 0 62px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5.6rem);
+      line-height: .98;
+      letter-spacing: -3px;
+      margin: 14px 0 24px;
+      max-width: 760px;
+    }
+
+    .lead {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--line);
+    }
+
+    .button.primary {
+      color: #15200a;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button.secondary { color: var(--text); }
+
+    .portrait {
+      position: relative;
+      max-width: 470px;
+      margin-left: auto;
+    }
+
+    .portrait::before {
+      content: "";
+      position: absolute;
+      inset: -14px 14px 14px -14px;
+      border: 1px solid var(--accent);
+      border-radius: 30px;
+      z-index: -1;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 30px;
+      filter: saturate(.88) contrast(1.03);
+    }
+
+    section {
+      padding: 74px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: -1.4px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(16,39,51,.76);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .statement {
+      font-size: clamp(1.5rem, 3vw, 2.45rem);
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0;
+    }
+
+    .statement strong { color: var(--accent); }
+
+    .questions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .question {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 1.08rem;
+    }
+
+    .contact {
+      background: var(--accent);
+      color: #15200a;
+      border-radius: 28px;
+      padding: 42px;
+    }
+
+    .contact p {
+      max-width: 720px;
+      font-size: 1.12rem;
+    }
+
+    .contact a {
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    footer {
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 820px) {
+      nav { align-items: flex-start; padding: 18px 0; }
+      .nav-links { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding-top: 52px;
+      }
+      .portrait {
+        margin: 0;
+        max-width: 100%;
+      }
+      .grid, .questions { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -2px; }
+      .contact { padding: 28px; }
+    }
   </style>
 </head>
+
 <body>
-  <header><nav class="wrap"><a class="brand" href="#inicio">Luis G. Pinilla R.</a><div class="nav-links"><a href="#perfil">Perfil</a><a href="#areas">Áreas</a><a href="#enfoque">Enfoque</a><a href="#contacto">Contacto</a></div></nav></header>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#home">Luis G. Pinilla R.</a>
+      <div class="nav-links">
+        <a href="#profile">Profile</a>
+        <a href="#areas">Areas</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <section id="inicio"><div class="wrap hero"><div><div class="eyebrow">Ingeniería · Energía · Sostenibilidad</div><h1>Cuestionar lo que no funciona. Construir lo que puede hacerse mejor.</h1><p class="lead">Soy Luis Guillermo Pinilla Rodríguez, ingeniero mecánico enfocado en transición energética, sostenibilidad, cambio climático, calidad del aire y gestión de proyectos.</p><div class="hero-actions"><a class="button primary" href="#contacto">Estoy abierto a oportunidades</a><a class="button" href="#enfoque">Conocer mi enfoque</a></div></div><div class="portrait"><img src="profile.jpg" alt="Retrato profesional de Luis Guillermo Pinilla Rodríguez"></div></div></section>
-    <section id="perfil"><div class="wrap"><h2>Perfil</h2><p class="section-intro">Mi trabajo se ubica donde la ingeniería se encuentra con los desafíos ambientales, energéticos e institucionales. Me interesa pasar de las metas generales a decisiones técnicas, proyectos viables y resultados que puedan evaluarse.</p><p class="statement">La transición energética no termina al elegir una tecnología. El reto está en crear las condiciones para que pueda <strong>implementarse, operarse, mantenerse y cumplir su propósito.</strong></p></div></section>
-    <section id="areas"><div class="wrap"><h2>Áreas de trabajo</h2><p class="section-intro">Experiencia desarrollada alrededor de sistemas energéticos, acción climática, sostenibilidad y coordinación técnica.</p><div class="grid"><article class="card"><h3>Transición energética</h3><p>Análisis técnico, condiciones de implementación, eficiencia, infraestructura y ciclo de vida.</p></article><article class="card"><h3>Cambio climático</h3><p>Estrategias, compromisos climáticos, reducción de emisiones y articulación entre agendas.</p></article><article class="card"><h3>Calidad del aire</h3><p>Evaluación de emisiones, tecnologías, información técnica y medidas para reducir impactos.</p></article><article class="card"><h3>Sostenibilidad</h3><p>Integración de criterios técnicos, ambientales, sociales, económicos y territoriales.</p></article><article class="card"><h3>Gestión de proyectos</h3><p>Coordinación, seguimiento, análisis de riesgos, actores, capacidades y continuidad.</p></article><article class="card"><h3>Ingeniería aplicada</h3><p>Preguntas técnicas, análisis de alternativas y soluciones adaptadas a condiciones reales.</p></article></div></div></section>
-    <section id="enfoque"><div class="wrap"><h2>Las preguntas importan</h2><p class="section-intro">Una tecnología prometedora puede no producir los resultados esperados. Estas son algunas de las preguntas que orientan mi trabajo:</p><div class="questions"><div class="question">¿Funcionará bajo las condiciones reales del territorio?</div><div class="question">¿Existe la infraestructura necesaria?</div><div class="question">¿Quién podrá operarla y mantenerla?</div><div class="question">¿Cuál será su costo durante toda la vida útil?</div><div class="question">¿Cómo se integrará con los sistemas existentes?</div><div class="question">¿Cómo mediremos si realmente cumple su propósito?</div></div></div></section>
-    <section id="contacto"><div class="wrap"><div class="contact"><h2>Abierto a nuevas oportunidades</h2><p>Busco oportunidades profesionales y consultorías en energía, transición energética, sostenibilidad, cambio climático, calidad del aire y gestión de proyectos.</p><p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener">agrega aquí el enlace de tu perfil</a></p><p>Correo: <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a></p></div></div></section>
+    <section id="home">
+      <div class="wrap hero">
+        <div>
+          <div class="eyebrow">Engineering · Energy · Sustainability</div>
+          <h1>Question what does not work. Build what can be done better.</h1>
+          <p class="lead">
+            I am Luis Guillermo Pinilla Rodríguez, a mechanical engineer focused on
+            energy transition, sustainability, climate change, air quality and project management.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Open to opportunities</a>
+            <a class="button secondary" href="#approach">Explore my approach</a>
+          </div>
+        </div>
+
+        <div class="portrait">
+          <img src="profile.jpg" alt="Professional portrait of Luis Guillermo Pinilla Rodríguez" />
+        </div>
+      </div>
+    </section>
+
+    <section id="profile">
+      <div class="wrap">
+        <h2>Profile</h2>
+        <p class="section-intro">
+          My work sits at the intersection of engineering and environmental, energy
+          and institutional challenges. I am interested in turning broad goals into
+          technical decisions, viable projects and measurable results.
+        </p>
+
+        <p class="statement">
+          Energy transition does not end when a technology is selected.
+          The real challenge is creating the conditions for it to be
+          <strong>implemented, operated, maintained and able to fulfil its purpose.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section id="areas">
+      <div class="wrap">
+        <h2>Areas of work</h2>
+        <p class="section-intro">
+          Experience developed across energy systems, climate action, sustainability
+          and technical coordination.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Energy transition</h3>
+            <p>Technical analysis, implementation conditions, efficiency, infrastructure and life-cycle considerations.</p>
+          </article>
+
+          <article class="card">
+            <h3>Climate change</h3>
+            <p>Strategies, climate commitments, emissions reduction and coordination across agendas.</p>
+          </article>
+
+          <article class="card">
+            <h3>Air quality</h3>
+            <p>Assessment of emissions, technologies, technical information and measures to reduce impacts.</p>
+          </article>
+
+          <article class="card">
+            <h3>Sustainability</h3>
+            <p>Integration of technical, environmental, social, economic and territorial criteria.</p>
+          </article>
+
+          <article class="card">
+            <h3>Project management</h3>
+            <p>Coordination, monitoring, risk analysis, stakeholder engagement, capacity building and continuity.</p>
+          </article>
+
+          <article class="card">
+            <h3>Applied engineering</h3>
+            <p>Technical questions, alternatives analysis and solutions adapted to real-world conditions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap">
+        <h2>The questions matter</h2>
+        <p class="section-intro">
+          A promising technology may still fail to deliver the expected results.
+          These are some of the questions that guide my work:
+        </p>
+
+        <div class="questions">
+          <div class="question">Will it work under the real conditions of the territory?</div>
+          <div class="question">Is the required infrastructure available?</div>
+          <div class="question">Who will be able to operate and maintain it?</div>
+          <div class="question">What will it cost throughout its full life cycle?</div>
+          <div class="question">How will it integrate with existing systems?</div>
+          <div class="question">How will we know whether it is truly fulfilling its purpose?</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <h2>Open to new opportunities</h2>
+          <p>
+            I am currently seeking professional opportunities and consultancies in
+            energy, energy transition, sustainability, climate change, air quality
+            and project management.
+          </p>
+          <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+              add your LinkedIn profile link here
+            </a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:your-email@example.com">your-email@example.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="wrap">© 2026 Luis Guillermo Pinilla Rodríguez.</div></footer>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Luis Guillermo Pinilla Rodríguez.
+    </div>
+  </footer>
 </body>
 </html>
